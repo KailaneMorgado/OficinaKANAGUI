@@ -53,12 +53,29 @@ namespace OficinaKANAGUI
                     usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
 
                     //Mudar para o MenuPrincipal:
-                    MenuPrincipal menuPrincipal = new MenuPrincipal();
+                    MenuPrincipal menuPrincipal = new MenuPrincipal(usuario);
                     Hide(); //esconder a janela atual (que no caso é a de login)
                     menuPrincipal.ShowDialog(); //mostrar o MenuPrincipal
 
                     Show(); //Mostrar a tela de login caso a pessoa saia do menu principal.
                 }
+            }
+        }
+
+        private void txbEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txbSenha.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void txbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogar.PerformClick();
             }
         }
     }

@@ -124,6 +124,7 @@
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Banco.cs" />
+    <Compile Include="Model\OrdemServico.cs" />
     <Compile Include="Model\Servico.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model\Veiculo.cs" />
@@ -132,8 +133,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOrdemServico.resx">
+      <DependentUpon>FormOrdemServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormServico.resx">
+      <DependentUpon>FormServico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVeiculo.resx">
+      <DependentUpon>FormVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
