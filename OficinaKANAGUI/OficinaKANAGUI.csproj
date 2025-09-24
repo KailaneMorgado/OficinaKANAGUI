@@ -133,6 +133,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCaixa.resx">
+      <DependentUpon>FormCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOrdemServico.resx">
       <DependentUpon>FormOrdemServico.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sujo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caixa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinheiro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

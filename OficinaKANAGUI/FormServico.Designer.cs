@@ -31,11 +31,11 @@
             this.lblServico = new System.Windows.Forms.Label();
             this.dgvServico = new System.Windows.Forms.DataGridView();
             this.grbCadastrar = new System.Windows.Forms.GroupBox();
-            this.lblNomeCadastrar = new System.Windows.Forms.Label();
-            this.txbNomeCadastrar = new System.Windows.Forms.TextBox();
-            this.lblPrecoCadastrar = new System.Windows.Forms.Label();
-            this.txbPrecoCadastrar = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.txbPrecoCadastrar = new System.Windows.Forms.TextBox();
+            this.lblPrecoCadastrar = new System.Windows.Forms.Label();
+            this.txbNomeCadastrar = new System.Windows.Forms.TextBox();
+            this.lblNomeCadastrar = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txbPrecoEditar = new System.Windows.Forms.TextBox();
@@ -84,44 +84,6 @@
             this.grbCadastrar.TabStop = false;
             this.grbCadastrar.Text = "Cadastrar";
             // 
-            // lblNomeCadastrar
-            // 
-            this.lblNomeCadastrar.AutoSize = true;
-            this.lblNomeCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeCadastrar.Location = new System.Drawing.Point(0, 41);
-            this.lblNomeCadastrar.Name = "lblNomeCadastrar";
-            this.lblNomeCadastrar.Size = new System.Drawing.Size(53, 18);
-            this.lblNomeCadastrar.TabIndex = 3;
-            this.lblNomeCadastrar.Text = "Nome:";
-            // 
-            // txbNomeCadastrar
-            // 
-            this.txbNomeCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNomeCadastrar.Location = new System.Drawing.Point(51, 40);
-            this.txbNomeCadastrar.Name = "txbNomeCadastrar";
-            this.txbNomeCadastrar.Size = new System.Drawing.Size(184, 22);
-            this.txbNomeCadastrar.TabIndex = 4;
-            // 
-            // lblPrecoCadastrar
-            // 
-            this.lblPrecoCadastrar.AutoSize = true;
-            this.lblPrecoCadastrar.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecoCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecoCadastrar.Location = new System.Drawing.Point(1, 80);
-            this.lblPrecoCadastrar.Name = "lblPrecoCadastrar";
-            this.lblPrecoCadastrar.Size = new System.Drawing.Size(52, 18);
-            this.lblPrecoCadastrar.TabIndex = 5;
-            this.lblPrecoCadastrar.Text = "Preço:";
-            // 
-            // txbPrecoCadastrar
-            // 
-            this.txbPrecoCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPrecoCadastrar.Location = new System.Drawing.Point(52, 80);
-            this.txbPrecoCadastrar.Name = "txbPrecoCadastrar";
-            this.txbPrecoCadastrar.Size = new System.Drawing.Size(184, 22);
-            this.txbPrecoCadastrar.TabIndex = 6;
-            // 
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(201)))), ((int)(((byte)(192)))));
@@ -135,6 +97,45 @@
             this.btnCadastrar.TabIndex = 11;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
+            // 
+            // txbPrecoCadastrar
+            // 
+            this.txbPrecoCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPrecoCadastrar.Location = new System.Drawing.Point(52, 80);
+            this.txbPrecoCadastrar.Name = "txbPrecoCadastrar";
+            this.txbPrecoCadastrar.Size = new System.Drawing.Size(184, 22);
+            this.txbPrecoCadastrar.TabIndex = 6;
+            // 
+            // lblPrecoCadastrar
+            // 
+            this.lblPrecoCadastrar.AutoSize = true;
+            this.lblPrecoCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecoCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecoCadastrar.Location = new System.Drawing.Point(1, 80);
+            this.lblPrecoCadastrar.Name = "lblPrecoCadastrar";
+            this.lblPrecoCadastrar.Size = new System.Drawing.Size(52, 18);
+            this.lblPrecoCadastrar.TabIndex = 5;
+            this.lblPrecoCadastrar.Text = "Preço:";
+            // 
+            // txbNomeCadastrar
+            // 
+            this.txbNomeCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNomeCadastrar.Location = new System.Drawing.Point(51, 40);
+            this.txbNomeCadastrar.Name = "txbNomeCadastrar";
+            this.txbNomeCadastrar.Size = new System.Drawing.Size(184, 22);
+            this.txbNomeCadastrar.TabIndex = 4;
+            // 
+            // lblNomeCadastrar
+            // 
+            this.lblNomeCadastrar.AutoSize = true;
+            this.lblNomeCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCadastrar.Location = new System.Drawing.Point(0, 41);
+            this.lblNomeCadastrar.Name = "lblNomeCadastrar";
+            this.lblNomeCadastrar.Size = new System.Drawing.Size(53, 18);
+            this.lblNomeCadastrar.TabIndex = 3;
+            this.lblNomeCadastrar.Text = "Nome:";
             // 
             // grbEditar
             // 
@@ -143,6 +144,7 @@
             this.grbEditar.Controls.Add(this.lblNomePreco);
             this.grbEditar.Controls.Add(this.txbNomeEditar);
             this.grbEditar.Controls.Add(this.lblNomeEditar);
+            this.grbEditar.Enabled = false;
             this.grbEditar.Location = new System.Drawing.Point(282, 405);
             this.grbEditar.Name = "grbEditar";
             this.grbEditar.Size = new System.Drawing.Size(242, 176);
@@ -207,6 +209,7 @@
             // 
             this.grbApagar.Controls.Add(this.btnApagar);
             this.grbApagar.Controls.Add(this.lblSelecioneApagar);
+            this.grbApagar.Enabled = false;
             this.grbApagar.Location = new System.Drawing.Point(535, 405);
             this.grbApagar.Name = "grbApagar";
             this.grbApagar.Size = new System.Drawing.Size(253, 176);

@@ -50,7 +50,7 @@ namespace OficinaKANAGUI
                 {
                     //Armazenar as infos vindas do banco de dados no objeto "usuario"
                     usuario.Id = int.Parse(resultado.Rows[0]["id"].ToString());
-                    usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
+                    usuario.NomeCompleto = resultado.Rows[0]["nome"].ToString();
 
                     //Mudar para o MenuPrincipal:
                     MenuPrincipal menuPrincipal = new MenuPrincipal(usuario);

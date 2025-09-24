@@ -21,6 +21,7 @@ namespace OficinaKANAGUI
         {
             InitializeComponent();
             this.usuario = usuario;
+            AtualizarDgv();
         }
         public void AtualizarDgv()
         {

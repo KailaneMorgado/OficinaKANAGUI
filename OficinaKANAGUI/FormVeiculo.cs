@@ -26,7 +26,7 @@ namespace OficinaKANAGUI
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txbPlacaCadastrar.Text.Length == 7)
+            if (txbPlacaCadastrar.Text.Length != 7)
             {
                 MessageBox.Show("A placa deve ter 7 caracteres!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -134,7 +134,7 @@ namespace OficinaKANAGUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txbPlacaEditar.Text.Length == 7)
+            if (txbPlacaEditar.Text.Length != 7)
             {
                 MessageBox.Show("A placa deve ter 7 caracteres!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -63,6 +63,26 @@ namespace OficinaKANAGUI.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Caixa {
+            get {
+                object obj = ResourceManager.GetObject("Caixa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dinheiro {
+            get {
+                object obj = ResourceManager.GetObject("dinheiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mídia {
             get {
                 object obj = ResourceManager.GetObject("Mídia", resourceCulture);

@@ -23,41 +23,7 @@ namespace OficinaKANAGUI
             this.usuario = usuario;
             AtualizarDgv();
         }
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            if (txbNomeCadastrar.Text.Length <5)
-            {
-                MessageBox.Show("O nome do serviço deve ter no mínimo 4 caracteres!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txbPrecoCadastrar.Text == "")
-            {
-                MessageBox.Show("Inserir o preço do serviço!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                //Fazer o cadastro...
-                Model.Servico servicoCadastro = new Model.Servico();
 
-                //Salvar os valores dos campos nos atributos do obj:
-                servicoCadastro.NomeServico = txbNomeCadastrar.Text;
-                servicoCadastro.Preco = double.Parse(txbPrecoCadastrar.Text);
-
-                //Executar o INSERT:
-                if (servicoCadastro.Cadastrar())
-                {
-                    MessageBox.Show("Serviço cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //Atualizar o dgv:
-                    AtualizarDgv();
-
-                    ResetarCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Falha ao cadastrar serviço!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
         public void AtualizarDgv()
         {
             //Declarando a variavel pra atualizar o dgv
@@ -172,5 +138,40 @@ namespace OficinaKANAGUI
             }
         }
 
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
+            if (txbNomeCadastrar.Text.Length < 5)
+            {
+                MessageBox.Show("O nome do serviço deve ter no mínimo 4 caracteres!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txbPrecoCadastrar.Text == "")
+            {
+                MessageBox.Show("Inserir o preço do serviço!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //Fazer o cadastro...
+                Model.Servico servicoCadastro = new Model.Servico();
+
+                //Salvar os valores dos campos nos atributos do obj:
+                servicoCadastro.NomeServico = txbNomeCadastrar.Text;
+                servicoCadastro.Preco = double.Parse(txbPrecoCadastrar.Text);
+
+                //Executar o INSERT:
+                if (servicoCadastro.Cadastrar())
+                {
+                    MessageBox.Show("Serviço cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Atualizar o dgv:
+                    AtualizarDgv();
+
+                    ResetarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao cadastrar serviço!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

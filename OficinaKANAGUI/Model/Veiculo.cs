@@ -32,7 +32,7 @@ namespace OficinaKANAGUI.Model
         }
         public bool Cadastrar()
         {
-            string comando = "INSERT INTO veiculo (placa, cor, ano, modelo, marca,id_usuario) VALUES (@placa, @cor, @ano, @modelo, @marca , @id_usuario)";
+            string comando = "INSERT INTO veiculo (placa,cor,ano,modelo,marca,id_usuario) VALUES (@placa, @cor, @ano, @modelo, @marca , @id_usuario)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
