@@ -289,6 +289,7 @@
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.lblGerenciamentoUsuario);
             this.Name = "FormUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciamento de Usuários";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.grbCadastrar.ResumeLayout(false);

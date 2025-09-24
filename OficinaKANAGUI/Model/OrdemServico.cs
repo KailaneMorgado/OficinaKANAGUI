@@ -18,7 +18,7 @@ namespace OficinaKANAGUI.Model
         public bool Situacao { get; set; }
         public string Email { get; set; }
         public int Quantidade { get; set; }
-        public string NomeServico { get; set; }
+        public int IdVeiculo { get; set; }
 
         public DataTable Listar()
         {
@@ -50,13 +50,13 @@ namespace OficinaKANAGUI.Model
         }
         public bool Cadastrar()
         {
-            string comando = "INSERT INTO ordemservico (nome_servico,id_usuario,id_servico, quantidade) VALUES " +
-                "(@nome_servico, @id_usuario, @id_servico, quantidade)";
+            string comando = "INSERT INTO ordemservico (id_veiculo,id_usuario,id_servico, quantidade) VALUES " +
+                "(@id_veiculo, @id_usuario, @id_servico, @quantidade)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            cmd.Parameters.AddWithValue("@nome_servico", NomeServico);
+            cmd.Parameters.AddWithValue("@id_veiculo", IdVeiculo);
             cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
             cmd.Parameters.AddWithValue("@quantidade", Quantidade);
             cmd.Parameters.AddWithValue("@id_servico", IdServico);
@@ -87,12 +87,12 @@ namespace OficinaKANAGUI.Model
 
         public bool EncerrarComanda()
         {
-            string comando = "UPDATE ordemservico SET situacao = 0 WHERE email = @email AND situacao = 1";
+            string comando = "UPDATE ordemservico SET situacao = 1 WHERE id_usuario = @id_usuario AND situacao = 0";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            cmd.Parameters.AddWithValue("@email", Email);
+            cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
             cmd.Prepare();
             try
             {

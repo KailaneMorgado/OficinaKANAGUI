@@ -96,6 +96,7 @@ namespace OficinaKANAGUI
                 //Salvar os valores dos campos nos atributos do obj:
                 servicoCadastro.NomeServico = txbNomeEditar.Text;
                 servicoCadastro.Preco = double.Parse(txbPrecoEditar.Text);
+                servicoCadastro.Id = IdSelecionado;
 
                 //Executar o INSERT:
                 if (servicoCadastro.Modificar())

@@ -37,37 +37,16 @@ namespace OficinaKANAGUI
             dgvVeiculos.DataSource = veiculo.Listar();
         }
 
-        private void dgvOrdemServico_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Pegar a linha selecionada:
             int ls = dgvUsuarios.SelectedCells[0].RowIndex;
 
             //Colocar o ID do produto no campo de código:
-            txbIdServico.Text = dgvUsuarios.Rows[ls].Cells[0].Value.ToString();
+          
+            idUsuarioSelecionado = (int)dgvUsuarios.Rows[ls].Cells[0].Value;
 
-            //Colocar o nome do produto no campo informações:
-            txbDescricaoServico.Text = dgvUsuarios.Rows[ls].Cells[1].Value.ToString();
-        }
-
-        private void btnContinuar_Click(object sender, EventArgs e)
-        {
-            //Verificar se os campos estão vazios:
-            if (txbOrdemServico.Text.Length == 0)
-            {
-                MessageBox.Show("Informe o número da ordem!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txbIdServico.Text.Length == 0)
-            {
-                MessageBox.Show("Informe o ID do Serviço!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                //Desativar o grbInformacoes
-                grbInformacoes.Enabled = false;
-
-                //Ativar o grbLancamentos
-                grbLancamento.Enabled = true;
-            }
+            
         }
 
         private void btnLancar_Click(object sender, EventArgs e)
@@ -80,11 +59,11 @@ namespace OficinaKANAGUI
             else
             {
                 Model.OrdemServico ordemServico = new Model.OrdemServico();
-                ordemServico.IdServico = int.Parse(txbIdServico.Text);
+                ordemServico.IdServico = idServicoSelecionado;
                 ordemServico.Quantidade = int.Parse(txbQuantidade.Text);
-                ordemServico.NomeServico = txbDescricaoServico.Text;
-                ordemServico.IdUsuario = usuario.Id;
-                ordemServico.Email = txbOrdemServico.Text;
+                ordemServico.IdUsuario = idUsuarioSelecionado;
+                ordemServico.IdVeiculo = idVeiculoSelecionado;
+               
 
                 if (ordemServico.Cadastrar())
                 {
@@ -102,19 +81,32 @@ namespace OficinaKANAGUI
         public void ResetarCampos()
         {
             //Limpar os txb's:
-            txbDescricaoServico.Clear();
-            txbIdServico.Clear();
-            txbOrdemServico.Clear();
             txbQuantidade.Clear();
-
-            //Resetar os grbs:
-            grbLancamento.Enabled = false;
-            grbInformacoes.Enabled = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             ResetarCampos();
+        }
+
+        private void dgvVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Pegar a linha selecionada:
+            int ls = dgvVeiculos.SelectedCells[0].RowIndex;
+
+            //Colocar o ID do produto no campo de código:
+
+            idVeiculoSelecionado = (int)dgvVeiculos.Rows[ls].Cells[0].Value;
+        }
+
+        private void dgvServicos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Pegar a linha selecionada:
+            int ls = dgvServicos.SelectedCells[0].RowIndex;
+
+            //Colocar o ID do produto no campo de código:
+
+            idServicoSelecionado = (int)dgvServicos.Rows[ls].Cells[0].Value;
         }
     }
 }

@@ -32,14 +32,14 @@
             this.lblOrdem = new System.Windows.Forms.Label();
             this.txbOrdemServico = new System.Windows.Forms.TextBox();
             this.btnListar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCaixa = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picboxCaixa = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.chbPagamento = new System.Windows.Forms.CheckBox();
             this.btnEncerrar = new System.Windows.Forms.Button();
             this.mySqlCommand1 = new MySqlConnector.MySqlCommand();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaixa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCaixa)).BeginInit();
             this.SuspendLayout();
@@ -58,11 +58,11 @@
             // 
             this.lblOrdem.AutoSize = true;
             this.lblOrdem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrdem.Location = new System.Drawing.Point(171, 95);
+            this.lblOrdem.Location = new System.Drawing.Point(120, 95);
             this.lblOrdem.Name = "lblOrdem";
-            this.lblOrdem.Size = new System.Drawing.Size(117, 20);
+            this.lblOrdem.Size = new System.Drawing.Size(168, 20);
             this.lblOrdem.TabIndex = 7;
-            this.lblOrdem.Text = "Ordem Serviço:";
+            this.lblOrdem.Text = "Ordem Serviço (email):";
             // 
             // txbOrdemServico
             // 
@@ -84,14 +84,15 @@
             this.btnListar.TabIndex = 9;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = false;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // dataGridView1
+            // dgvCaixa
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 176);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(619, 259);
-            this.dataGridView1.TabIndex = 10;
+            this.dgvCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCaixa.Location = new System.Drawing.Point(43, 176);
+            this.dgvCaixa.Name = "dgvCaixa";
+            this.dgvCaixa.Size = new System.Drawing.Size(619, 259);
+            this.dgvCaixa.TabIndex = 10;
             // 
             // pictureBox1
             // 
@@ -134,6 +135,7 @@
             this.chbPagamento.TabIndex = 13;
             this.chbPagamento.Text = "Pagamento Recebido";
             this.chbPagamento.UseVisualStyleBackColor = true;
+            this.chbPagamento.CheckedChanged += new System.EventHandler(this.chbPagamento_CheckedChanged);
             // 
             // btnEncerrar
             // 
@@ -142,12 +144,14 @@
             this.btnEncerrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEncerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(111)))), ((int)(((byte)(85)))));
             this.btnEncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncerrar.Location = new System.Drawing.Point(283, 543);
+            this.btnEncerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrar.Location = new System.Drawing.Point(265, 549);
             this.btnEncerrar.Name = "btnEncerrar";
-            this.btnEncerrar.Size = new System.Drawing.Size(122, 40);
+            this.btnEncerrar.Size = new System.Drawing.Size(168, 40);
             this.btnEncerrar.TabIndex = 14;
-            this.btnEncerrar.Text = "Encerrar Comanda";
+            this.btnEncerrar.Text = "Encerrar Ordem Serviço";
             this.btnEncerrar.UseVisualStyleBackColor = false;
+            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
             // 
             // mySqlCommand1
             // 
@@ -166,7 +170,7 @@
             this.Controls.Add(this.chbPagamento);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCaixa);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.txbOrdemServico);
             this.Controls.Add(this.lblOrdem);
@@ -177,7 +181,7 @@
             this.Name = "FormCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCaixa";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaixa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxCaixa)).EndInit();
             this.ResumeLayout(false);
@@ -192,7 +196,7 @@
         private System.Windows.Forms.Label lblOrdem;
         private System.Windows.Forms.TextBox txbOrdemServico;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCaixa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.CheckBox chbPagamento;
