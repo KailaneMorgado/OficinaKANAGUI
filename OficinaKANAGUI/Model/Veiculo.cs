@@ -48,8 +48,8 @@ namespace OficinaKANAGUI.Model
             // O trecho abaixo irá retornar true caso o cadastro dê certo:
             // Em caso de erro, experimente comentar o try/catch e executar novamente o código;
             // Grande parte dos problemas estão associados à um comando SQL incorreto. Verifique a string comando.
-            try
-            {
+            //try
+            //{
                 if (cmd.ExecuteNonQuery() == 0)
                 {
                     conexaoBD.Desconectar(con);
@@ -60,12 +60,12 @@ namespace OficinaKANAGUI.Model
                     conexaoBD.Desconectar(con);
                     return true;
                 }
-            }
-            catch
-            {
-                conexaoBD.Desconectar(con);
-                return false;
-            }
+            //}
+            //catch
+            //{
+            //    conexaoBD.Desconectar(con);
+            //    return false;
+            //}
         }
 
         public bool Apagar()
@@ -113,8 +113,8 @@ namespace OficinaKANAGUI.Model
             cmd.Parameters.AddWithValue("@id", Id);
 
             cmd.Prepare();
-            try
-            {
+            //try
+            //{
                 if (cmd.ExecuteNonQuery() == 0)
                 {
                     conexaoBD.Desconectar(con);
@@ -125,12 +125,12 @@ namespace OficinaKANAGUI.Model
                     conexaoBD.Desconectar(con);
                     return true;
                 }
-            }
-            catch
-            {
-                conexaoBD.Desconectar(con);
-                return false;
-            }
+            //}
+            //catch
+            //{
+            //    conexaoBD.Desconectar(con);
+            //    return false;
+            //}
         }
     }
 }

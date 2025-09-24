@@ -57,6 +57,7 @@ namespace OficinaKANAGUI
                 veiculoCadastro.Marca = txbMarcaCadastrar.Text;
                 veiculoCadastro.Ano = int.Parse(txbAnoCadastrar.Text);
                 veiculoCadastro.Cor = txbCorCadastrar.Text;
+                veiculoCadastro.IdUsuario = usuario.Id;
 
                 //Executar o INSERT:
                 if (veiculoCadastro.Cadastrar())
@@ -90,10 +91,10 @@ namespace OficinaKANAGUI
 
             //Colocar os valores das células nos txb's de edição:
             txbPlacaEditar.Text = dgvVeiculos.Rows[ls].Cells[1].Value.ToString();
-            txbModeloEditar.Text = dgvVeiculos.Rows[ls].Cells[2].Value.ToString();
-            txbMarcaEditar.Text = dgvVeiculos.Rows[ls].Cells[3].Value.ToString();
-            txbAnoEditar.Text = dgvVeiculos.Rows[ls].Cells[4].Value.ToString();
-            txbCorEditar.Text = dgvVeiculos.Rows[ls].Cells[5].Value.ToString();
+            txbModeloEditar.Text = dgvVeiculos.Rows[ls].Cells[4].Value.ToString();
+            txbMarcaEditar.Text = dgvVeiculos.Rows[ls].Cells[5].Value.ToString();
+            txbAnoEditar.Text = dgvVeiculos.Rows[ls].Cells[3].Value.ToString();
+            txbCorEditar.Text = dgvVeiculos.Rows[ls].Cells[2].Value.ToString();
 
             //Armazenar o ID de quem foi selecionado:
             IdSelecionado = (int)dgvVeiculos.Rows[ls].Cells[0].Value;
@@ -158,11 +159,13 @@ namespace OficinaKANAGUI
             {
                 //Prosseguir com a edição:
                 Model.Veiculo veiculoEditar = new Model.Veiculo();
-                veiculoEditar.Placa = txbPlacaCadastrar.Text;
-                veiculoEditar.Modelo = txbModeloCadastrar.Text;
-                veiculoEditar.Marca = txbMarcaCadastrar.Text;
-                veiculoEditar.Ano = int.Parse(txbAnoCadastrar.Text);
-                veiculoEditar.Cor = txbCorCadastrar.Text;
+                veiculoEditar.Placa = txbPlacaEditar.Text;
+                veiculoEditar.Modelo = txbModeloEditar.Text;
+                veiculoEditar.Marca = txbMarcaEditar.Text;
+                veiculoEditar.Ano = int.Parse(txbAnoEditar.Text);
+                veiculoEditar.Cor = txbCorEditar.Text;
+                veiculoEditar.IdUsuario = usuario.Id;
+                veiculoEditar.Id = IdSelecionado;
 
 
                 if (veiculoEditar.Modificar())
